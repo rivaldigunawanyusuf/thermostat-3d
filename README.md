@@ -2,11 +2,14 @@
 
 A modern, interactive web-based thermostat interface with sleek 3D neumorphic design and smooth animations.
 
+## 🔗 Live Demo
+
+**[View Live Demo](https://thermostat-3d.vercel.app/)**
+
 ## 🚀 Features
 
 - **Interactive Rotating Dial**: Click to cycle through 8 weather/climate modes
 - **Temperature Control**: Adjust temperature from 10°C to 35°C with up/down buttons
-- **Weather Display**: Real-time weather status with background imagery
 - **Control Panel**: Power, Schedule, Eco Mode, and Fan Speed buttons
 - **3D Neumorphic Design**: Modern UI with depth, shadows, and glow effects
 - **Responsive Layout**: Works on desktop and mobile devices
