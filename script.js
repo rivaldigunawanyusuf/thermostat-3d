@@ -30,7 +30,23 @@ class Thermostat {
   }
   
   createIcons() {
-    const radius = 48;
+    const dialContainer = this.dial.parentElement;
+    const containerWidth = dialContainer.offsetWidth;
+    
+
+    let radius;
+    if (containerWidth >= 140) {
+      radius = containerWidth * 0.35;
+    } else if (containerWidth >= 110) {
+      radius = containerWidth * 0.33;
+    } else if (containerWidth >= 95) {
+      radius = containerWidth * 0.30;
+    } else if (containerWidth >= 80) {
+      radius = containerWidth * 0.35;
+    } else {
+      radius = containerWidth * 0.33;
+    }
+    
     const angleStep = 360 / this.iconClasses.length;
     
     this.iconClasses.forEach((iconClass, index) => {
@@ -112,6 +128,42 @@ class Thermostat {
           btn.style.transform = 'scale(1)';
         }, 150);
       });
+    });
+    
+    window.addEventListener('resize', () => {
+      this.repositionIcons();
+    });
+  }
+  
+  repositionIcons() {
+    const dialContainer = this.dial.parentElement;
+    const containerWidth = dialContainer.offsetWidth;
+    
+    let radius;
+    if (containerWidth >= 140) {
+      radius = containerWidth * 0.36;
+    } else if (containerWidth >= 110) {
+      radius = containerWidth * 0.33;
+    } else if (containerWidth >= 95) {
+      radius = containerWidth * 0.30;
+    } else if (containerWidth >= 80) {
+      radius = containerWidth * 0.28;
+    } else {
+      radius = containerWidth * 0.25;
+    }
+    
+    const angleStep = 360 / this.iconClasses.length;
+    const icons = this.dial.querySelectorAll('.icon');
+    
+    icons.forEach((icon, index) => {
+      const angle = (angleStep * index) - 90;
+      const rad = angle * Math.PI / 180;
+      
+      const x = radius * Math.cos(rad);
+      const y = radius * Math.sin(rad);
+      
+      icon.style.left = `calc(50% + ${x}px)`;
+      icon.style.top = `calc(50% + ${y}px)`;
     });
   }
 }
