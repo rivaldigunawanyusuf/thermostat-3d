@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Thermostat 3D</title>
+        
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Exo+2:wght@300;400;500&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="thermostat">
+            <div class="inner-container">
+                <div class="display-screen">
+                    <div class="weather-info">
+                        <div class="weather-status">
+                            <i class="fas fa-cloud-sun"></i> Partly Cloudy
+                        </div>
+                        <div class="weather-status">
+                            18°C Outside
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="control-panel">
+                    <div class="side-buttons">
+                        <button class="btn" title="Power">
+                            <i class="fas fa-power-off"></i>
+                        </button>
+                        <button class="btn" title="Schedule">
+                            <i class="fas fa-clock"></i>
+                        </button>
+                        <button class="btn" title="Eco Mode">
+                            <i class="fas fa-leaf"></i>
+                        </button>
+                        <button class="btn" title="Fan Speed">
+                            <i class="fas fa-wind"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="dial-container">
+                        <div class="dial" id="rotating-dial">
+                            <div class="dial-center"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="temp-display">
+                        <div class="temp-reading" id="temp-display">22°C</div>
+                        <div class="temp-controls">
+                            <button id="temp-up" title="Increase Temperature">
+                                <i class="fas fa-chevron-up"></i>
+                            </button>
+                            <button id="temp-down" title="Decrease Temperature">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
